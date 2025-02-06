@@ -13,6 +13,7 @@
         # };
         # notify = false;
         # nvimtree = true;
+        telescope = true;
         treesitter = true;
       };
       styles = {
