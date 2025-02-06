@@ -25,26 +25,24 @@
           */
           ''
             cmp.mapping.preset.insert({
-                ['<C-n>'] = cmp.mapping.select_next_item(),  -- Select next item (VS Code: Down Arrow/Ctrl+N)
-                ['<C-p>'] = cmp.mapping.select_prev_item(),  -- Select previous item (VS Code: Up Arrow/Ctrl+P)
-                ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }), -- Confirm completion (VS Code: Enter)
-                ['<Tab>'] = cmp.mapping(function(fallback)
-                  if cmp.visible() then
-                    cmp.select_next_item()  -- If completion is visible, select next
-                  elseif vim.fn.pumvisible() == 0 then -- Check if popup menu is not visible
-                    return "<Tab>" -- If no completion, behave as normal Tab (indent)
-                  else
-                    fallback() -- Use default tab behavior for code completion
-                  end
-                end, {'i', 's'}),
-                ['<S-Tab>'] = cmp.mapping(function(fallback)
-                  if cmp.visible() then
-                    cmp.select_prev_item()  -- If completion is visible, select prev
-                  else
-                    fallback() -- Use default Shift+Tab behavior
-                  end
-                end, {'i', 's'}),
-            })
+              ['<C-n>'] = cmp.mapping.select_next_item(),  -- Select next item (VS Code: Down Arrow/Ctrl+N)
+              ['<C-p>'] = cmp.mapping.select_prev_item(),  -- Select previous item (VS Code: Up Arrow/Ctrl+P)
+              ['<CR>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }), -- Confirm completion (VS Code: Enter)
+              ["<Tab>"] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                else
+                  fallback()
+                end
+              end, { "i", "s" }),
+              ["<S-Tab>"] = cmp.mapping(function(fallback)
+                if cmp.visible() then
+                  cmp.select_prev_item()
+                else
+                  fallback()
+                end
+              end, { "i", "s" }),
+              })
           '';
       };
     };
