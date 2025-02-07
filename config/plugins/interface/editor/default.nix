@@ -21,5 +21,7 @@
         };
       };
     };
+    ts-autotag.enable = true;
+    sandwich.enable = true;
   };
 }
