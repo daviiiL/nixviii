@@ -23,5 +23,17 @@
     };
     ts-autotag.enable = true;
     sandwich.enable = true;
+    illuminate = {
+      enable = true;
+      modesAllowlist = [
+        "n"
+        "i"
+      ];
+      providers = [
+        "lsp"
+        "treesitter"
+        "regex"
+      ];
+    };
   };
 }
