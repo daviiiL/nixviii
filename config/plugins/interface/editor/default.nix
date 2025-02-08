@@ -5,6 +5,7 @@
     ./undotree.nix
     ./fidget.nix
     ./illuminate.nix
+    ./smear-cursor.nix
   ];
   plugins = {
     #NOTE: transfer multiline declarations to seperate files
@@ -13,5 +14,6 @@
     todo-comments.enable = true;
     ts-autotag.enable = true;
     sandwich.enable = true;
+    neoscroll.enable = true;
   };
 }
