@@ -41,6 +41,14 @@
         desc = "Telescope: live grep";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>fb";
+      action = "<cmd>Telescope buffers<CR>";
+      options = {
+        desc = "Telescope: buffers";
+      };
+    }
 
     #toggleterm
     {
