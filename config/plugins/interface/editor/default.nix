@@ -2,24 +2,13 @@
   imports = [
     ./toggleterm.nix
     ./colorizer.nix
+    ./undotree.nix
+    ./fidget.nix
   ];
   plugins = {
-    undotree = {
-      enable = true;
-      settings = {
-        autoOpenDiff = true;
-        focusOnToggle = true;
-      };
-    };
+    #NOTE: transfer multiline declarations to seperate files
     which-key.enable = true;
     markview.enable = true;
-    fidget = {
-      enable = true;
-      settings = {
-        notification = {
-          window.winblend = 0;
-        };
-      };
-    };
+    todo-comments.enable = true;
   };
 }
