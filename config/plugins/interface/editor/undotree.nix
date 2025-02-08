@@ -1,5 +1,5 @@
 {
-  undotree = {
+  plugins.undotree = {
     enable = true;
     settings = {
       autoOpenDiff = true;
