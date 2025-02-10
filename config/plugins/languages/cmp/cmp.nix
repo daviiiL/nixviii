@@ -4,9 +4,11 @@
     autoEnableSources = true;
     settings = {
       sources = [
+        {name = "git";}
         {name = "nvim_lsp";}
         {name = "path";}
         {name = "buffer";}
+        {name = "copilot";}
       ];
 
       experimental = {
