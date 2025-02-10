@@ -1,3 +1,3 @@
 # daviii's latest nixvim flake
 
-> special thanks to dctech's dotfile for reference
+> special thanks to dc-tec's dotfile for reference
