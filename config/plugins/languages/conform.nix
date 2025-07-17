@@ -126,6 +126,7 @@
             "shfmt"
           ];
           json = ["jq"];
+          php = ["intelephense"];
           "_" = ["trim_whitespace"];
         };
 
@@ -159,6 +160,9 @@
           };
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
+          };
+          intelephense = {
+            command = "${lib.getExe pkgs.intelephense}";
           };
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";

@@ -10,7 +10,8 @@
       ts_ls.enable = true;
       cssls.enable = true;
       html.enable = true;
-      intelephense.enable = true;
+      # intelephense.enable = true;
+      phpactor.enable = true;
 
       #other needed
       taplo.enable = true;
