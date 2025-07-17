@@ -14,6 +14,7 @@
       #other needed
       taplo.enable = true;
       nixd.enable = true;
+      qmlls.enable = true;
     };
   };
 }
