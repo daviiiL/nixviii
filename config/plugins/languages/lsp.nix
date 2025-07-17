@@ -1,4 +1,4 @@
-{
+{pkgs, ...}: {
   plugins.lsp = {
     enable = true;
     inlayHints = true;
@@ -10,8 +10,10 @@
       ts_ls.enable = true;
       cssls.enable = true;
       html.enable = true;
-      # intelephense.enable = true;
-      phpactor.enable = true;
+      intelephense = {
+        enable = true;
+        package = pkgs.intelephense;
+      };
 
       #other needed
       taplo.enable = true;
