@@ -127,7 +127,7 @@
             "shfmt"
           ];
           json = ["jq"];
-          php = ["intelephense"];
+          php = ["pretty-php"];
           "_" = ["trim_whitespace"];
         };
 
@@ -162,8 +162,8 @@
           bicep = {
             command = "${lib.getExe pkgs.bicep}";
           };
-          intelephense = {
-            command = "${lib.getExe pkgs.intelephense}";
+          pretty-php = {
+            commmand = "${lib.getExe pkgs.pretty-php}";
           };
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";
