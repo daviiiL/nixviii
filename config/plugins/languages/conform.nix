@@ -128,6 +128,7 @@
           ];
           json = ["jq"];
           php = ["pretty-php"];
+          qml = ["qmlformat"];
           "_" = ["trim_whitespace"];
         };
 
@@ -168,6 +169,9 @@
           #yamlfmt = {
           #  command = "${lib.getExe pkgs.yamlfmt}";
           #};
+          qmlformat = {
+            command = "${lib.getExe pkgs.kdePackages.qtdeclarative}";
+          };
         };
       };
     };
