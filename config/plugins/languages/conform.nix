@@ -170,7 +170,8 @@
           #  command = "${lib.getExe pkgs.yamlfmt}";
           #};
           qmlformat = {
-            command = "${lib.getExe pkgs.kdePackages.qtdeclarative}";
+            command = "${lib.getExe' pkgs.kdePackages.qtdeclarative "qmlformat"}";
+            args = ["-n" "--objects-spacing" "--functions-spacing" "$FILENAME"];
           };
         };
       };
