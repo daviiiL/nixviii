@@ -19,6 +19,8 @@
       taplo.enable = true;
       nixd.enable = true;
       qmlls.enable = true;
+
+      jdtls.enable = true;
     };
   };
 }

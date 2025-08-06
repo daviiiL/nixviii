@@ -129,6 +129,7 @@
           json = ["jq"];
           php = ["pretty-php"];
           qml = ["qmlformat"];
+          java = ["google-java-format"];
           "_" = ["trim_whitespace"];
         };
 
@@ -172,6 +173,9 @@
           qmlformat = {
             command = "${lib.getExe' pkgs.kdePackages.qtdeclarative "qmlformat"}";
             args = ["-n" "--objects-spacing" "--functions-spacing" "$FILENAME"];
+          };
+          google-java-format = {
+            command = "${lib.getExe pkgs.google-java-format}";
           };
         };
       };
