@@ -7,6 +7,7 @@
     ./illuminate.nix
     ./smear-cursor.nix
     ./indent-blankline.nix
+    ./bufferline.nix
   ];
   plugins = {
     #NOTE: transfer multiline declarations to seperate files
