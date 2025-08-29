@@ -2,6 +2,7 @@
   imports = [
     ./plugins
     ./keybinds.nix
+    ./log-files.nix
   ];
 
   # GENERAL SETTINGS

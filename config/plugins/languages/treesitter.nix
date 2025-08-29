@@ -3,7 +3,10 @@
     enable = true;
     settings = {
       auto_install = true;
-      highlight.enable = true;
+      highlight = {
+        enable = true;
+        disable = [ "log" ];
+      };
     };
   };
 }
