@@ -10,6 +10,19 @@
       ''
         local slow_format_filetypes = {}
 
+        -- formatters can't parse half-written code; keep those in :ConformInfo, don't notify
+        local parse_error_patterns = { "cannot parse", "failed to parse", "parse error", "syntaxerror" }
+
+        local function notify_format_error(err)
+          local msg = err:lower()
+          for _, pattern in ipairs(parse_error_patterns) do
+            if msg:find(pattern, 1, true) then
+              return
+            end
+          end
+          vim.notify("Formatter failed. See :ConformInfo for details", vim.log.levels.ERROR)
+        end
+
         vim.api.nvim_create_user_command("FormatDisable", function(args)
            if args.bang then
             vim.b.disable_autoformat = true
@@ -53,6 +66,8 @@
             local function on_format(err)
               if err and err:match("timeout$") then
                 slow_format_filetypes[vim.bo[bufnr].filetype] = true
+              elseif err then
+                notify_format_error(err)
               end
             end
 
@@ -70,10 +85,14 @@
               return
             end
 
-            return { lsp_fallback = true }
+            return { lsp_fallback = true }, function(err)
+              if err then
+                notify_format_error(err)
+              end
+            end
           end
         '';
-        notify_on_error = true;
+        notify_on_error = false;
         formatters_by_ft = {
           html = {
             __unkeyed-1 = "prettierd";
