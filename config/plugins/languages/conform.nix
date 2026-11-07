@@ -12,7 +12,6 @@
 
         vim.api.nvim_create_user_command("FormatDisable", function(args)
            if args.bang then
-            -- FormatDisable! will disable formatting just for this buffer
             vim.b.disable_autoformat = true
           else
             vim.g.disable_autoformat = true
@@ -29,10 +28,8 @@
         })
         vim.api.nvim_create_user_command("FormatToggle", function(args)
           if args.bang then
-            -- Toggle formatting for current buffer
             vim.b.disable_autoformat = not vim.b.disable_autoformat
           else
-            -- Toggle formatting globally
             vim.g.disable_autoformat = not vim.g.disable_autoformat
           end
         end, {
@@ -120,7 +117,7 @@
             stop_after_first = true;
           };
           terraform = ["terraform_fmt"];
-          bicep = ["bicep"];
+          bicep = lib.mkIf pkgs.stdenv.hostPlatform.isLinux ["bicep"];
           bash = [
             "shellcheck"
             "shellharden"
@@ -161,15 +158,12 @@
           shellharden = {
             command = "${lib.getExe pkgs.shellharden}";
           };
-          bicep = {
+          bicep = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
             command = "${lib.getExe pkgs.bicep}";
           };
           pretty-php = {
             commmand = "${lib.getExe pkgs.pretty-php}";
           };
-          #yamlfmt = {
-          #  command = "${lib.getExe pkgs.yamlfmt}";
-          #};
           qmlformat = {
             command = "${lib.getExe' pkgs.kdePackages.qtdeclarative "qmlformat"}";
             args = ["-n" "--objects-spacing" "--functions-spacing" "$FILENAME"];

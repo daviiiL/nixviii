@@ -5,14 +5,6 @@
       disable_underline = true;
       flavour = "mocha";
       integrations = {
-        # cmp = true;
-        # gitsigns = true;
-        # mini = {
-        #   enabled = true;
-        #   indentscope_color = "";
-        # };
-        # notify = false;
-        # nvimtree = true;
         telescope = true;
         treesitter = true;
       };

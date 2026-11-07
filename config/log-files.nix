@@ -1,29 +1,26 @@
 {
-  # Disable plugins for .log files
   autoGroups.log_files = {
     clear = true;
   };
-  
+
   autoCmd = [
     {
-      event = [ "BufRead" "BufNewFile" ];
+      event = ["BufRead" "BufNewFile"];
       pattern = "*.log";
       group = "log_files";
       callback = {
         __raw = ''
           function()
-            -- Disable treesitter highlighting
             vim.treesitter.stop()
-            
-            -- Disable LSP
-            vim.lsp.buf_detach_client(0, vim.lsp.get_active_clients())
-            
-            -- Disable common plugins that might be heavy for log files
+
+            for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+              vim.lsp.buf_detach_client(0, client.id)
+            end
+
             if vim.fn.exists(':IndentBlanklineDisable') == 2 then
               vim.cmd('IndentBlanklineDisable')
             end
-            
-            -- Set basic options for log files
+
             vim.bo.syntax = 'off'
             vim.bo.filetype = 'text'
             vim.wo.wrap = false

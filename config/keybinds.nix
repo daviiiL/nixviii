@@ -2,10 +2,6 @@
   globals.mapleader = " ";
 
   keymaps = [
-    #plugins that keymaps defined in their files
-    #cmp
-
-    #neo-tree
     {
       mode = ["n"];
       key = "<C-n>";
@@ -13,7 +9,6 @@
       options = {desc = "Open/Close Neotree";};
     }
 
-    #undotree
     {
       mode = "n";
       key = "<leader>ut";
@@ -24,7 +19,6 @@
       };
     }
 
-    #telescope
     {
       mode = "n";
       key = "<leader>ff";
@@ -50,7 +44,6 @@
       };
     }
 
-    #toggleterm
     {
       mode = "n";
       key = "<leader>t";

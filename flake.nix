@@ -12,6 +12,7 @@
     };
   };
   outputs = {
+    self,
     nixpkgs,
     nixvim,
     flake-parts,
@@ -19,7 +20,11 @@
     ...
   } @ inputs:
     flake-parts.lib.mkFlake {inherit inputs;} {
-      systems = ["aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin"];
+      systems = import nixvim.inputs.systems;
+
+      flake.darwinModules.default = {pkgs, ...}: {
+        environment.systemPackages = [self.packages.${pkgs.stdenv.hostPlatform.system}.default];
+      };
 
       perSystem = {
         system,
@@ -39,7 +44,7 @@
         };
       in {
         checks = {
-          default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
+          default = nixvim.lib.${system}.check.mkTestDerivationFromNvim {
             inherit nvim;
             name = "A nixvim configuration";
           };

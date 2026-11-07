@@ -1,14 +1,16 @@
 {
   plugins.illuminate = {
     enable = true;
-    modesAllowlist = [
-      "n"
-      "i"
-    ];
-    providers = [
-      "lsp"
-      "treesitter"
-      "regex"
-    ];
+    settings = {
+      modes_allowlist = [
+        "n"
+        "i"
+      ];
+      providers = [
+        "lsp"
+        "treesitter"
+        "regex"
+      ];
+    };
   };
 }

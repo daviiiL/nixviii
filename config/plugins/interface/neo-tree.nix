@@ -3,8 +3,9 @@
   plugins.neo-tree = {
     enable = true;
 
-    filesystem = {
-      filteredItems.hideGitignored = false;
+    settings = {
+      log_to_file = false;
+      filesystem.filtered_items.hide_gitignored = false;
     };
   };
 }

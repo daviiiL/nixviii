@@ -1,17 +1,13 @@
-{
+{pkgs, ...}: {
   imports = [
     ./plugins
     ./keybinds.nix
     ./log-files.nix
   ];
 
-  # GENERAL SETTINGS
-
-  # clipboard support
-  clipboard.providers.wl-copy.enable = true;
+  clipboard.providers.wl-copy.enable = pkgs.stdenv.hostPlatform.isLinux;
 
   opts = {
-    # line number
     number = true;
     relativenumber = false;
 
@@ -25,7 +21,6 @@
     shiftwidth = 2;
     breakindent = true;
     cursorline = true;
-    #min line number above and below the cur line
     scrolloff = 8;
     mouse = "a";
     foldmethod = "manual";
@@ -40,5 +35,6 @@
     splitkeep = "screen";
     splitright = true;
     cmdheight = 0;
+    fillchars = "eob: ";
   };
 }
