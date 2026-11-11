@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.cmp = {
-    enable = true;
+    enable = lib.mkDefault true;
     autoEnableSources = true;
     settings = {
       sources = [

@@ -1,6 +1,10 @@
-{pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins.lsp = {
-    enable = true;
+    enable = lib.mkDefault true;
     inlayHints = true;
     servers = {
       lua_ls.enable = true;

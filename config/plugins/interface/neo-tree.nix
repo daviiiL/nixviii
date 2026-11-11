@@ -1,7 +1,7 @@
-{
-  plugins.web-devicons.enable = true;
+{lib, ...}: {
+  plugins.web-devicons.enable = lib.mkDefault true;
   plugins.neo-tree = {
-    enable = true;
+    enable = lib.mkDefault true;
 
     settings = {
       log_to_file = false;

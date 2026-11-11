@@ -1,5 +1,5 @@
-{
+{lib, ...}: {
   plugins.telescope = {
-    enable = true;
+    enable = lib.mkDefault true;
   };
 }

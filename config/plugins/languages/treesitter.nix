@@ -1,6 +1,10 @@
-{config, ...}: {
+{
+  config,
+  lib,
+  ...
+}: {
   plugins.treesitter = {
-    enable = true;
+    enable = lib.mkDefault true;
     highlight = {
       enable = true;
       disable = ["log"];

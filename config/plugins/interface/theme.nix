@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   colorschemes.catppuccin = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       disable_underline = true;
       flavour = "mocha";

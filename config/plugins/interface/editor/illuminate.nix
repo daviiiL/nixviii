@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.illuminate = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       modes_allowlist = [
         "n"

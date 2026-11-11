@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.smear-cursor = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       distance_stop_animating = 0.5;
       hide_target_hack = false;

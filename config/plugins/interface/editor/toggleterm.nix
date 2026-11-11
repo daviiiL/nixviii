@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.toggleterm = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       size = 20;
     };

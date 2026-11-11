@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ./toggleterm.nix
     ./colorizer.nix
@@ -10,11 +10,11 @@
     ./bufferline.nix
   ];
   plugins = {
-    which-key.enable = true;
-    markview.enable = true;
-    todo-comments.enable = true;
-    ts-autotag.enable = true;
-    sandwich.enable = true;
-    neoscroll.enable = true;
+    which-key.enable = lib.mkDefault true;
+    markview.enable = lib.mkDefault true;
+    todo-comments.enable = lib.mkDefault true;
+    ts-autotag.enable = lib.mkDefault true;
+    sandwich.enable = lib.mkDefault true;
+    neoscroll.enable = lib.mkDefault true;
   };
 }

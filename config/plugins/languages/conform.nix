@@ -51,7 +51,7 @@
         })
       '';
     plugins.conform-nvim = {
-      enable = true;
+      enable = lib.mkDefault true;
       settings = {
         format_on_save = ''
           function(bufnr)

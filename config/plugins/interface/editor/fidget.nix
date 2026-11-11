@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.fidget = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       notification = {
         window.winblend = 0;

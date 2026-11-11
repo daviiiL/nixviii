@@ -1,6 +1,6 @@
-{
+{lib, ...}: {
   plugins.colorizer = {
-    enable = true;
+    enable = lib.mkDefault true;
     settings = {
       filetypes = {
         __unkeyed-1 = "*";

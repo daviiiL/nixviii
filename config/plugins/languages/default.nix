@@ -1,4 +1,4 @@
-{
+{lib, ...}: {
   imports = [
     ./lsp.nix
 
@@ -8,6 +8,6 @@
   ];
 
   plugins = {
-    nvim-autopairs.enable = true;
+    nvim-autopairs.enable = lib.mkDefault true;
   };
 }

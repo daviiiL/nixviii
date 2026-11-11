@@ -3,6 +3,7 @@
     ./plugins
     ./keybinds.nix
     ./log-files.nix
+    ./disable-plugins.nix
   ];
 
   clipboard.providers.wl-copy.enable = pkgs.stdenv.hostPlatform.isLinux;
