@@ -8,6 +8,7 @@
         telescope = true;
         treesitter = true;
       };
+      custom_highlights.IblScope.fg = "#7d699d";
       styles = {
         booleans = [
           "bold"

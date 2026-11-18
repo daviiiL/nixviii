@@ -3,10 +3,10 @@
     copilot-lua = {
       enable = lib.mkDefault true;
       settings = {
-        suggestions.enable = false;
-        panel.enable = false;
+        suggestion.enabled = false;
+        panel.enabled = false;
       };
     };
-    copilot-cmp.enable = lib.mkDefault true;
+    blink-cmp-copilot.enable = lib.mkDefault true;
   };
 }
